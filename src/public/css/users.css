@@ -1,0 +1,132 @@
+.users-container {
+  position: relative;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/img/blur1.png");
+}
+
+.users-container a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.users-container .logo {
+  position: absolute;
+  top: -38px;
+  left: 10px;
+}
+
+.users-container .logo img {
+  width: 380px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.users-container .nav-item a {
+  color: #e3c08d;
+}
+
+.users-container .nav-item a.disabled {
+  color: #898071;
+}
+
+.users-container .navigation-menu {
+  position: absolute;
+  z-index: 10000;
+  top: 1%;
+  color: #efefee;
+  font-size: 40px;
+  font-family: monospace;
+}
+
+.users-container .users-frame {
+  position: relative;
+  padding-bottom: 80px;
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.users-container .users-frame .board {
+  position: relative;
+  margin-top: 100px;
+  width: 1320px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.users-container .board .dishes-table {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.users-container .board .user-table {
+  position: relative;
+  width: 85%;
+  height: auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.users-container .board .user-table .table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0; 
+  border-radius: 12px; 
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.users-container .header-name {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 25px;
+  color: #ffffff;
+}
+
+.users-container select:focus {
+  min-width: 90%;
+  width: auto;
+}
+
+.users-container .spec-select {
+  position: relative;
+  padding: 0px 7px;
+  /*width: 100%;*/
+  height: 27px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  color: #4f547b;
+}
+
+.users-container table td,
+table th {
+  text-align: center;
+  vertical-align: middle;
+}

@@ -1,0 +1,63 @@
+<%- include('includes/header') %>
+
+<link rel="stylesheet" type="text/css" href="/css/login.css" />
+
+<body>
+  <form class="login-container" action="/admin/login" method="POST">
+    <div class="login-frame">
+      <div class="login-top">
+        <span>Enter</span>
+        <div>Go back <a href="/admin">Home</a></div>
+        <p>
+          Not registered yet?
+          <a href="/admin/signup">Signup</a>
+        </p>
+      </div>
+
+      <div class="login-input-frame">
+        <div class="login-input-container">
+          <label>Bookstore *</label>
+          <input
+            type="text"
+            name="memberNick"
+            class="member-nick"
+            placeholder="Username"
+            required
+          />
+        </div>
+
+        <div class="login-input-container">
+          <label>Password *</label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              name="memberPassword"
+              class="member-password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <span id="togglePassword" class="toggle-password">👁️</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="login-btn btn" name="login" type="submit">Login</button>
+    </div>
+  </form>
+
+  <script>
+    const toggle = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    toggle.addEventListener('click', function () {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+
+      // Belgini o‘zgartirish (ko‘rsatish/yashirish)
+      this.textContent = type === 'password' ? '👁️' : '🙈';
+    });
+  </script>
+</body>
+
+<%- include('includes/footer') %>

@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/blur1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.signup-container {
+  backdrop-filter: blur(15px);
+  background: rgba(150, 144, 144, 0.35);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-frame {
+  margin: 0 auto;
+  /* Markazga olish */
+  width: 100%;
+  max-width: 600px;
+  /* Login bilan bir xil bo‘lishi uchun */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+.signup-top {
+  text-align: center;
+  color: #ffffff;
+}
+
+.signup-top span {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.signup-top div,
+.signup-top p {
+  font-size: 16px;
+  color: #f1f5f9;
+}
+
+.signup-top a {
+  color: #00ffe7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sign-input-frame {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sign-up-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sign-up-frame label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #f8fafc;
+}
+
+.sign-up-frame input {
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.sign-up-frame input::placeholder {
+  color: #fff;
+}
+
+.sign-up-frame input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 255, 247, 0.3);
+}
+
+.signup-btn {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #fff;
+  font-size: 18px;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+}
+
+.media-frame {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.upload-img-frame {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.file-box {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.upload-name {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.file-input-label {
+  padding: 12px 20px;
+  background-color: #0ea5e9;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  white-space: nowrap;
+  margin-top: 8px;
+}
+
+.file-input-label:hover {
+  background-color: #0284c7;
+}
+
+.upload-hidden {
+  display: none;
+}
+
+
+.thumbnail-desc {
+  font-size: 13px;
+  color: #dbeafe;
+}
+
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* Ko‘zcha uchun joy qoldiramiz */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+  user-select: none;
+}
+
+
+
+/* Responsiv dizayn */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 25px 20px;
+    max-width: 90%;
+  }
+
+  .signup-top span {
+    font-size: 24px;
+  }
+
+  .sign-up-frame input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .signup-btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .media-frame {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

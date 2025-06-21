@@ -49,7 +49,7 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
 
         const newMember: MemberInput = req.body;
         newMember.memberImage = file?.path; // buyerga provayt qilyapmiz
-        newMember.memberType = MemberType.RESTAURANT;
+        newMember.memberType = MemberType.BOOKSTORE;
         const result = await memberService.processSignup(newMember);
 
         req.session.member = result;  //
@@ -149,7 +149,7 @@ restaurantController.verifyRestaurant = (
     res: Response,
     next: NextFunction
 ) => {
-    if (req.session?.member?.memberType === MemberType.RESTAURANT) {// requsning ichidan kelayotgan sessionimizni ichidan menberni tekshiramiz va o'sha taypei Restarand bo'lishi kerak
+    if (req.session?.member?.memberType === MemberType.BOOKSTORE) {// requsning ichidan kelayotgan sessionimizni ichidan menberni tekshiramiz va o'sha taypei Restarand bo'lishi kerak
         req.member = req.session.member;
         next();
     } else {

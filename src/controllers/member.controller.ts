@@ -37,9 +37,12 @@ memberController.signup = async (req: Request, res: Response) => {
             result = await memberService.signup(input),
             token = await authService.createToken(result)
 
+        const isProduction = process.env.NODE_ENV === "production";
         res.cookie("accessToken", token, {
             maxAge: AUTH_TIMER * 3600 * 1000,
             httpOnly: false,
+            secure: isProduction,
+            sameSite: isProduction ? "none" : "lax",
         });
 
         res.status(HttpCode.CREATED).json({ member: result, accessToken: token });
@@ -57,9 +60,12 @@ memberController.login = async (req: Request, res: Response) => {
             result = await memberService.login(input),
             token = await authService.createToken(result);
 
+        const isProduction = process.env.NODE_ENV === "production";
         res.cookie("accessToken", token, {
             maxAge: AUTH_TIMER * 3600 * 1000,
             httpOnly: false,
+            secure: isProduction,
+            sameSite: isProduction ? "none" : "lax",
         });
 
         res.status(HttpCode.OK).json({ member: result, accessToken: token });

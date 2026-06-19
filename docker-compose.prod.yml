@@ -1,0 +1,17 @@
+services:
+  asadbek-zuhorbooks-api:
+    container_name: asadbek-zuhorbooks-api
+    restart: always
+    image: node:20-alpine
+    ports:
+      - "127.0.0.1:5003:3002"
+    volumes:
+      - ./:/usr/src/zuhorbooks
+    working_dir: /usr/src/zuhorbooks
+    command: sh -c "npm install && npm run build && npm run start:prod"
+    networks:
+      - asadbek-zuhorbooks-network
+
+networks:
+  asadbek-zuhorbooks-network:
+    driver: bridge

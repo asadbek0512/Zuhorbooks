@@ -2,4 +2,7 @@
 set -e
 git fetch origin main
 git reset --hard origin/main
-docker compose -f docker-compose.prod.yml up -d --force-recreate
+npm install
+npm run build
+pm2 startOrReload ecosystem.config.js
+pm2 save

@@ -1,19 +1,5 @@
 #!/bin/bash
-
-# PRODUCTION
-git reset --hard
-git checkout main
-git pull origin main
-npm i
-npm run build
-pm2 start process.config.js --env production
-
-
-
-
-# DEVELOPMENT
-# git reset --hard
-# git checkout develop
-# git pull origin develop
-# npm i
-# pm2 start "npm run start:dev" --name=ZUHORBOOKS
+set -e
+git fetch origin main
+git reset --hard origin/main
+docker compose -f docker-compose.prod.yml up -d --force-recreate
